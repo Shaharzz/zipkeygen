@@ -34,13 +34,13 @@ def main():
     choice = input("Choose option (1/2): ").strip()
 
     if choice == '1':
-        master_pw = input("Your master password (⚠️ visible input): ").strip()
+        master_pw = input("Your master password (visible input): ").strip()
         zip_pw, salt = generate_zip_password(master_pw)
         print(f"\nZIP Password: {zip_pw}")
         print(f"Salt (SAVE THIS): {salt}")
 
     elif choice == '2':
-        master_pw = input("Your master password (⚠️ visible input): ").strip()
+        master_pw = input("Your master password (visible input): ").strip()
         stored_salt = input("Saved salt: ").strip()
         try:
             zip_pw = recreate_zip_password(master_pw, stored_salt)
